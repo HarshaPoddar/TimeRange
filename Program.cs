@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Intersection
 {
-    class Program
+    class Range
     {
         public void IntersectPeriods(List<dynamic> SetA, List<dynamic> SetB)
         {
@@ -36,8 +36,8 @@ namespace Intersection
         static void Main(string[] args)
         {
             Program Range = new Program();
-            var ListA = new List<dynamic>();
-            var ListB = new List<dynamic>();
+            var ListSetA = new List<dynamic>();
+            var ListSetB = new List<dynamic>();
             Console.WriteLine("Enter the number of periods in setA");
             int NumberOfPeriodsSetA = Convert.ToInt32(Console.ReadLine());
             Console.WriteLine("Enter the number of periods in setB");
@@ -45,16 +45,16 @@ namespace Intersection
             for (int index = 0; index < NumberOfPeriodsSetA; index++)
             {
                 Console.WriteLine("Enter your period range {0} in setA: ", (index + 1));
-                TimeRange p1 = new TimeRange(Convert.ToDateTime(Console.ReadLine()), Convert.ToDateTime(Console.ReadLine()));
-                ListA.Add(p1);
+                TimeRange period1 = new TimeRange(Convert.ToDateTime(Console.ReadLine()), Convert.ToDateTime(Console.ReadLine()));
+                ListSetA.Add(period1);
             }
             for (int index = 0; index < NumberOfPeriodSetB; index++)
             {
                 Console.WriteLine("Enter your period range {0} in setB: ", (index + 1));
-                TimeRange p2 = new TimeRange(Convert.ToDateTime(Console.ReadLine()), Convert.ToDateTime(Console.ReadLine()));
-                ListB.Add(p2);
+                TimeRange period2 = new TimeRange(Convert.ToDateTime(Console.ReadLine()), Convert.ToDateTime(Console.ReadLine()));
+                ListSetB.Add(period2);
             }
-            Range.IntersectPeriods(ListA, ListB);
+            Range.IntersectPeriods(ListSetA, ListSetB);
             Console.ReadLine();
         }
     }
